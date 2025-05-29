@@ -7,6 +7,10 @@ const ProjectsSection = styled.section`
   padding: 100px 20px;
   background: ${({ theme }) => theme.colors.background};
   position: relative;
+
+  @media (max-width: 768px) {
+    padding: 60px 15px;
+  }
 `;
 
 const Container = styled.div`
@@ -21,51 +25,35 @@ const Title = styled(motion.h2)`
   background: ${({ theme }) => theme.gradients.primary};
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-`;
 
-const ProjectsGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  padding: 20px;
-`;
-
-const ProjectCard = styled(motion.div)`
-  background: ${({ theme }) => `${theme.colors.backgroundLight}80`};
-  border-radius: 12px;
-  overflow: hidden;
-  backdrop-filter: blur(10px);
-  border: 1px solid ${({ theme }) => `${theme.colors.primary}30`};
-  padding: 20px;
-  cursor: pointer;
-  
-  h3 {
-    color: ${({ theme }) => theme.colors.text};
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-
-  p {
-    color: ${({ theme }) => theme.colors.textSecondary};
-    font-size: 1rem;
-    line-height: 1.6;
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    margin-bottom: 2rem;
   }
 `;
 
-const EmptyState = styled(motion.div)`
+const DevelopmentMessage = styled(motion.div)`
   text-align: center;
   padding: 40px;
   color: ${({ theme }) => theme.colors.textSecondary};
   
   h3 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin-bottom: 1rem;
     color: ${({ theme }) => theme.colors.primary};
+
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+    }
   }
 
   p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     line-height: 1.6;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
   }
 `;
 
@@ -82,17 +70,6 @@ const Projects = () => {
     }
   };
 
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3
-      }
-    }
-  };
-
   return (
     <ProjectsSection>
       <Container>
@@ -102,20 +79,16 @@ const Projects = () => {
           viewport={{ once: true, amount: 0.2 }}
         >
           <Title variants={fadeInUp}>Projetos</Title>
-          <motion.div variants={staggerContainer}>
-            <ProjectsGrid>
-              <EmptyState 
-                variants={fadeInUp}
-                whileHover={{ 
-                  scale: 1.02,
-                  transition: { duration: 0.2 }
-                }}
-              >
-                <h3>Em breve</h3>
-                <p>Projetos serão adicionados em breve...</p>
-              </EmptyState>
-            </ProjectsGrid>
-          </motion.div>
+          <DevelopmentMessage 
+            variants={fadeInUp}
+            whileHover={{ 
+              scale: 1.02,
+              transition: { duration: 0.2 }
+            }}
+          >
+            <h3>Em Desenvolvimento</h3>
+            <p>Projetos serão adicionados em breve...</p>
+          </DevelopmentMessage>
         </motion.div>
       </Container>
     </ProjectsSection>
