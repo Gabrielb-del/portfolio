@@ -1,14 +1,17 @@
 export const theme = {
   colors: {
-    primary: '#6C63FF',
-    secondary: '#FF6584',
-    background: '#0a0a0a',
-    backgroundLight: '#1a1a1a',
-    text: '#ffffff',
-    textSecondary: 'rgba(255, 255, 255, 0.8)',
+    primary: '#0ea5a5',
+    secondary: '#06b6d4',
+    accent: '#f59e0b',
+    background: '#05070a',
+    backgroundLight: '#0f1722',
+    surface: '#111b28',
+    text: '#f5f7fa',
+    textSecondary: 'rgba(231, 236, 243, 0.78)',
   },
   gradients: {
-    primary: 'linear-gradient(45deg, #6C63FF, #FF6584)',
+    primary: 'linear-gradient(120deg, #0ea5a5, #06b6d4)',
+    softGlow: 'radial-gradient(circle at 10% 10%, rgba(14, 165, 165, 0.16), transparent 40%)',
   },
   breakpoints: {
     mobile: '768px',

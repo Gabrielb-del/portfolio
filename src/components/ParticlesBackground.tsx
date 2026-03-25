@@ -13,6 +13,10 @@ const ParticlesBackground = () => {
       id="tsparticles"
       init={particlesInit}
       options={{
+        fullScreen: {
+          enable: true,
+          zIndex: 0,
+        },
         background: {
           color: {
             value: "transparent",
@@ -21,10 +25,6 @@ const ParticlesBackground = () => {
         fpsLimit: 120,
         interactivity: {
           events: {
-            onClick: {
-              enable: true,
-              mode: "push",
-            },
             onHover: {
               enable: true,
               mode: "grab",
@@ -38,20 +38,17 @@ const ParticlesBackground = () => {
                 opacity: 0.5,
               },
             },
-            push: {
-              quantity: 4,
-            },
           },
         },
         particles: {
           color: {
-            value: "#6C63FF",
+            value: "#0ea5a5",
           },
           links: {
-            color: "#FF6584",
-            distance: 150,
+            color: "#06b6d4",
+            distance: 135,
             enable: true,
-            opacity: 0.2,
+            opacity: 0.28,
             width: 1,
           },
           move: {
@@ -61,7 +58,7 @@ const ParticlesBackground = () => {
               default: "bounce",
             },
             random: false,
-            speed: 2,
+            speed: 1.5,
             straight: false,
           },
           number: {
@@ -69,10 +66,10 @@ const ParticlesBackground = () => {
               enable: true,
               area: 800,
             },
-            value: 80,
+            value: 72,
           },
           opacity: {
-            value: 0.5,
+            value: 0.42,
           },
           shape: {
             type: "circle",

@@ -7,7 +7,7 @@ const AboutSection = styled.section`
   min-height: 100vh;
   width: 100%;
   padding: 100px 20px;
-  background: ${({ theme }) => theme.colors.background};
+  background: transparent;
   position: relative;
   overflow: hidden;
 
@@ -42,7 +42,7 @@ const ImageContainer = styled(motion.div)`
   height: 400px;
   border-radius: 20px;
   overflow: hidden;
-  border: 2px solid ${({ theme }) => theme.colors.primary};
+  border: 1px solid ${({ theme }) => `${theme.colors.primary}55`};
 
   @media (max-width: 768px) {
     flex: 0 0 250px;
@@ -74,6 +74,7 @@ const TabContainer = styled.div`
   justify-content: center;
 
   @media (max-width: 768px) {
+    flex-wrap: wrap;
     gap: 15px;
     margin-bottom: 25px;
   }
@@ -82,22 +83,21 @@ const TabContainer = styled.div`
 const Tab = styled.button<{ active: boolean }>`
   padding: 10px 20px;
   border: none;
-  background: ${({ theme, active }) => active ? theme.colors.primary : 'transparent'};
-  color: ${({ theme, active }) => active ? theme.colors.background : theme.colors.text};
-  border-radius: 8px;
+  background: ${({ theme, active }) => active ? `${theme.colors.primary}22` : 'transparent'};
+  color: ${({ theme }) => theme.colors.text};
+  border-radius: 999px;
   cursor: pointer;
   font-size: 1.1rem;
   transition: all 0.3s ease;
-  border: 1px solid ${({ theme }) => theme.colors.primary};
+  border: 1px solid ${({ theme }) => `${theme.colors.primary}66`};
 
   @media (max-width: 768px) {
     padding: 8px 16px;
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   &:hover {
-    background: ${({ theme }) => theme.colors.primary};
-    color: ${({ theme }) => theme.colors.background};
+    background: ${({ theme }) => `${theme.colors.primary}22`};
   }
 `;
 
@@ -125,6 +125,38 @@ const Description = styled(motion.p)`
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 2rem;
+    text-align: center;
+  }
+`;
+
+const HighlightsGrid = styled(motion.div)`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0.9rem;
+  margin-top: 1.4rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const HighlightCard = styled(motion.div)`
+  border: 1px solid ${({ theme }) => `${theme.colors.primary}35`};
+  border-radius: 14px;
+  background: ${({ theme }) => `${theme.colors.surface}9e`};
+  padding: 1rem;
+
+  strong {
+    display: block;
+    color: ${({ theme }) => theme.colors.text};
+    margin-bottom: 0.35rem;
+    font-size: 0.96rem;
+  }
+
+  span {
+    color: ${({ theme }) => theme.colors.textSecondary};
+    font-size: 0.92rem;
+    line-height: 1.4;
   }
 `;
 
@@ -199,6 +231,11 @@ const EducationItem = styled(motion.div)`
       font-size: 1rem;
     }
   }
+
+  p {
+    color: ${({ theme }) => theme.colors.textSecondary};
+    font-size: 0.95rem;
+  }
 `;
 
 const Year = styled.span`
@@ -259,15 +296,34 @@ const About = () => {
     "GIT",
   ];
 
+  const journeyHighlights = [
+    { title: "Foco em resultado", text: "Páginas pensadas para gerar clareza, confiança e conversão." },
+    { title: "Código escalável", text: "Estruturas fáceis de evoluir com novas seções e integrações." },
+    { title: "Automações com Python", text: "Fluxos repetitivos viram processos mais rápidos e inteligentes." },
+  ];
+
+  const educationHistory = [
+    {
+      year: "2023 - 2026",
+      title: "Sistemas de Informação - ITE",
+      description: "Base sólida em engenharia de software, dados e arquitetura de sistemas."
+    },
+    {
+      year: "2022",
+      title: "Certificado em Desenvolvedor Full Stack - SENAC",
+      description: "Formação prática em aplicações web completas com foco em produto."
+    }
+  ];
+
   return (
-    <AboutSection>
+    <AboutSection id="sobre">
       <Container>
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          <Title variants={fadeInUp}>Sobre Mim</Title>
+          <Title variants={fadeInUp}>Minha Jornada</Title>
           <ContentWrapper>
             <ImageContainer variants={fadeInUp}>
               <img src={avatar} alt="Sua foto" />
@@ -278,13 +334,13 @@ const About = () => {
                   active={activeTab === 'about'} 
                   onClick={() => setActiveTab('about')}
                 >
-                  Sobre Mim
+                  Essência
                 </Tab>
                 <Tab 
                   active={activeTab === 'education'} 
                   onClick={() => setActiveTab('education')}
                 >
-                  Formação
+                  Formação e trilha
                 </Tab>
               </TabContainer>
 
@@ -295,8 +351,17 @@ const About = () => {
                   animate="visible"
                 >
                   <Description variants={fadeInUp}>
-                  Desenvolvo sites modernos, responsivos e com foco em conversão — especialmente landing pages que apresentam seu serviço ou produto de forma clara, profissional e estratégica. Também utilizo Python em projetos paralelos para automatizar tarefas e otimizar processos, sempre buscando entregar soluções que economizam tempo e geram resultado.
+                  Sou estudante de Sistemas de Informação e tenho grande interesse por desenvolvimento de software e automação. Atualmente, atuo na área de suporte técnico, onde aplico meu conhecimento para resolver problemas de forma eficiente e ágil.
+                  Busco me aprofundar cada vez mais em desenvolvimento, explorando também o uso de IA para otimizar processos e evoluir minhas soluções, com o objetivo de fazer parte de um time de desenvolvimento.
                   </Description>
+                  <HighlightsGrid variants={staggerContainer}>
+                    {journeyHighlights.map((item) => (
+                      <HighlightCard key={item.title} variants={fadeInUp}>
+                        <strong>{item.title}</strong>
+                        <span>{item.text}</span>
+                      </HighlightCard>
+                    ))}
+                  </HighlightsGrid>
                 </motion.div>
               )}
 
@@ -308,14 +373,13 @@ const About = () => {
                 >
                   <EducationSection variants={staggerContainer}>
                     <motion.div variants={staggerContainer}>
-                      <EducationItem variants={fadeInUp}>
-                        <Year>2023 - 2026</Year>
-                        <h3>Sistemas de Informação - ITE (3º ano)</h3>
-                      </EducationItem>
-                      <EducationItem variants={fadeInUp}>
-                        <Year>2022</Year>
-                        <h3>Certificado em Desenvolvedor Full Stack - SENAC</h3>
-                      </EducationItem>
+                      {educationHistory.map((item) => (
+                        <EducationItem key={item.title} variants={fadeInUp}>
+                          <Year>{item.year}</Year>
+                          <h3>{item.title}</h3>
+                          <p>{item.description}</p>
+                        </EducationItem>
+                      ))}
                     </motion.div>
                   </EducationSection>
                 </motion.div>
@@ -324,12 +388,13 @@ const About = () => {
           </ContentWrapper>
 
           <SkillsSection
+            id="skills"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >
-            <SectionTitle variants={fadeInUp}>Habilidades</SectionTitle>
+            <SectionTitle variants={fadeInUp}>Stack e Ferramentas</SectionTitle>
             <SkillsGrid variants={staggerContainer}>
               {skills.map((skill, index) => (
                 <SkillItem
