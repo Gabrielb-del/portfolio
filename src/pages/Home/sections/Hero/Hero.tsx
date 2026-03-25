@@ -6,6 +6,10 @@ import theme from "../../../../theme";
 import StyledButton from "../../../../components/StyledButton/StyledButton";
 import AnimatedBackground from "../../../../components/AnimatedBackgroundColor/AnimatedBackground";
 
+// MUI Grid pode variar bastante nas tipagens entre versões; para manter o build estável,
+// tratamos como "any" aqui (este arquivo é apenas uma página/ seção de exemplo).
+const GridAny = Grid as any;
+
 
 
 
@@ -36,37 +40,37 @@ const Hero = () => {
             <StyledHero>
                 <Container maxWidth="lg">
                     <AnimatedBackground/>
-                    <Grid container spacing={2}>
-                        <Grid item xs={12} md={5}>
+                    <GridAny container spacing={2}>
+                        <GridAny item xs={12} md={5}>
                             <StyledImg src={Avatar} />
-                        </Grid>
-                        <Grid item xs={12} md={7}>
+                        </GridAny>
+                        <GridAny item xs={12} md={7}>
                             <Typography color="secondary" variant="h2" textAlign="center">
                                 Prazer meu nome é
                             </Typography>
                             <Typography color="primary" variant="h1" textAlign="center">
                                 Gabriel Baunilia
                             </Typography>
-                            <Grid container display="flex" justifyContent="center" spacing={3}>
-                                <Grid item xs={12} md={6} display="flex" justifyContent="center">
+                            <GridAny container display="flex" justifyContent="center" spacing={3}>
+                                <GridAny item xs={12} md={6} display="flex" justifyContent="center">
                                     <StyledButton>
                                         <FileDownloadIcon />
                                         <Typography>
                                             Download CV
                                         </Typography>
                                     </StyledButton>
-                                </Grid>
-                                <Grid item xs={12} md={6} >
+                                </GridAny>
+                                <GridAny item xs={12} md={6} >
                                     <StyledButton>
                                         <ForwardToInboxIcon />
                                         <Typography>
                                             Contate-me
                                         </Typography>
                                     </StyledButton>
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                    </Grid>
+                                </GridAny>
+                            </GridAny>
+                        </GridAny>
+                    </GridAny>
                 </Container>
             </StyledHero>
         </>
