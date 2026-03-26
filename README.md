@@ -1,54 +1,43 @@
-# React + TypeScript + Vite
+# Portfólio Pessoal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![TypeScript](https://img.shields.io/badge/TypeScript-~5.7.2-3178C6?style=flat-square&logo=typescript)
+![Vite](https://img.shields.io/badge/Vite-~6.2.4-646CFF?style=flat-square&logo=vite)
 
-Currently, two official plugins are available:
+Este repositório contém o código do meu portfólio como desenvolvedor. O projeto foi construído com foco em **performance**, **design moderno**, **responsividade** e uma **experiência fluida** com animações e microinterações.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Acesse o projeto
 
-## Expanding the ESLint configuration
+🔗 https://Gabrielb-del.github.io/portfolio
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Visão geral
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+O portfólio apresenta meus projetos e habilidades de forma clara e interativa. Inclui seções com narrativa (apresentação e formação), além de um “laboratório” de projetos com cards detalhados, mídia (imagens e vídeos) e transições suaves.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Tecnologias utilizadas
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- TypeScript
+- Vite
+- React
+- styled-components
+- framer-motion
+- tsparticles / react-tsparticles
+- GitHub Pages (deploy)
+- Cursor AI (desenvolvimento assistido por IA)
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Recursos (destaques)
+
+- Interface moderna e clean
+- Layout totalmente responsivo (desktop e mobile)
+- Navegação por seções com realce ativo
+- Detalhamento de projetos com animações e galeria
+- Suporte a mídias (imagens/GIFs/vídeos curtos) e tags
+- Experiência fluida com transições suaves
+
+## Contato
+
+- LinkedIn: https://www.linkedin.com/in/gabriel-baunilia-a363a826b
+- Email: gabrielbaunilia123@gmail.com
+
+## Observação
+
+Se você gostou do projeto, considere deixar uma estrela ⭐ no repositório.

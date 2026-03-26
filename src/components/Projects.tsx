@@ -760,7 +760,7 @@ const Projects = () => {
       },
   {
     id: "discord-b4b",
-    title: "Bots de Discord - PeterBot e RakingB4B",
+    title: "Bots de Discord - PeterBot e RankingB4B",
     description: "Sistema de bots em Python para automação e gestão de equipes comerciais via Discord, com controle de operadores e rankings em tempo real.",
     longDescription:
           "Sistema de automação desenvolvido em Python utilizando bots para Discord, focado na gestão operacional de equipes comerciais. A solução é composta por múltiplos bots responsáveis pelo gerenciamento de operadores, controle de metas, monitoramento de desempenho e organização de dados em tempo real, processando informações enviadas via Discord e estruturando dados como contas abertas e contatos qualificados. O sistema mantém rankings atualizados automaticamente com base na performance dos operadores e disponibiliza comandos administrativos para gestão completa da equipe, incluindo adição, remoção e atualização de usuários. Além disso, conta com rotinas automatizadas para backup de dados em JSON e exportação de relatórios em Excel, garantindo organização, segurança das informações e suporte à tomada de decisão.",
